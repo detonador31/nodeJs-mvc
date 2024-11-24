@@ -1,1 +1,16 @@
 <h1>Nova Tarefa</h1>
+
+<form action="/tasks/insert" method="POST">
+    <input id="id" name="id" value="{{ task.id }}" hidden />
+    <div class="form-control">
+        <label for="title">Título:</label>
+        <input type="text" name="title" value="{{ task.title }}" placeholder="Digite o Título" />
+    </div>
+    <div class="form-control">
+        <label for="description">Descrição:</label>
+        <textarea name="description" value="{{ task.description }}" placeholder="Digite a Descrição" /></textarea>
+
+    </div>
+
+    <input type="submit" value="Salvar" />
+</form>
