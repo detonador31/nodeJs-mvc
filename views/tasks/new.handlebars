@@ -1,6 +1,10 @@
+{{#if task}}
+<h1>Editar Tarefa {{task.title}}</h1>
+{{else }}
 <h1>Nova Tarefa</h1>
+{{/if }}
 
-<form action="/tasks/insert" method="POST">
+<form action="/tasks/save" method="POST">
     <input id="id" name="id" value="{{ task.id }}" hidden />
     <div class="form-control">
         <label for="title">Título:</label>
@@ -8,8 +12,19 @@
     </div>
     <div class="form-control">
         <label for="description">Descrição:</label>
-        <textarea name="description" value="{{ task.description }}" placeholder="Digite a Descrição" /></textarea>
+        <textarea name="description" placeholder="Digite a Descrição" />{{ task.description }}</textarea>
 
+    </div>
+
+    <div class="form-control form-checkbox">
+        {{#if task}}
+        {{#if task.done}}
+        <input type="checkbox" name="done" checked />
+        {{else }}
+        <input type="checkbox" name="done" />
+        {{/if}}
+        <label for="done">Status:</label>
+        {{/if}}
     </div>
 
     <input type="submit" value="Salvar" />
