@@ -2,18 +2,19 @@ const { DataTypes } = require('sequelize')
 
 const db = require('../db/conn')
 
-const User = db.define('User', {
-    name: {
+const Task = db.define('Task', {
+    title: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    occupation: {
+    description: {
         type: DataTypes.STRING,
         required: true
     },
-    newsletter: {
+    done: {
         type: DataTypes.BOOLEAN,
+        equired: true
     },
 })
 
-module.exports = User
+module.exports = Task
