@@ -5,7 +5,7 @@ const db = require('../db/conn')
 const Task = db.define('Task', {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        required: false
     },
     description: {
         type: DataTypes.STRING,
@@ -13,7 +13,7 @@ const Task = db.define('Task', {
     },
     done: {
         type: DataTypes.BOOLEAN,
-        equired: true
+        required: true
     },
 })
 

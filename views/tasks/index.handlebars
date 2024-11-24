@@ -1,1 +1,15 @@
 <h1>Exibir todas as tarefas</h1>
+
+<ul class="task-list">
+    {{#each tasks}}
+    <li>
+        <a href="/" class="title">{{title}}</a>
+        {{!-- {{description}} --}}
+        <div class="actions">
+            <a href=""><i class="bi bi-check2"></i></a>
+            <a href="/tasks/edit/{{ id }}"><i class="bi bi-pencil-square"></i></a>
+            <a href="/tasks/delete/{{ id }}"><i class="bi bi-x-lg"></i></a>
+        </div>
+    </li>
+    {{/each}}
+</ul>
