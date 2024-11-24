@@ -14,10 +14,14 @@ app.use(
         extended: true,
     })
 )
-
 app.use(express.json())
+
 // Importa os asets da pasta public
 app.use(express.static('public'))
+
+//Importação de Routes
+const taskRoutes = require('./routes/taskRoutes')
+app.use('/tasks', taskRoutes)
 
 // Importação das models do projeto
 const Task = require('./models/Task')
