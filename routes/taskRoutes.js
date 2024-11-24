@@ -8,5 +8,6 @@ router.post('/save', TaskController.save)
 router.get('/', TaskController.index)
 router.get('/edit/:id', TaskController.edit)
 router.get('/delete/:id', TaskController.delete)
+router.get('/change-status/:id', TaskController.changeStatus)
 
 module.exports = router

@@ -110,6 +110,11 @@ nav li {
     color: #333;
 }
 
+.title.done {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
 .actions {
     display: flex;
 }

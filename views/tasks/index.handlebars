@@ -3,10 +3,13 @@
 <ul class="task-list">
     {{#each tasks}}
     <li>
+        {{#if done }}
+        <a href="/" class="title done">{{title}}</a>
+        {{else }}
         <a href="/" class="title">{{title}}</a>
-        {{!-- {{description}} --}}
+        {{/if }}
         <div class="actions">
-            <a href=""><i class="bi bi-check2"></i></a>
+            <a href="/tasks/change-status/{{ id }}"><i class="bi bi-check2"></i></a>
             <a href="/tasks/edit/{{ id }}"><i class="bi bi-pencil-square"></i></a>
             <a href="/tasks/delete/{{ id }}"><i class="bi bi-x-lg"></i></a>
         </div>

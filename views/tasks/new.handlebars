@@ -13,19 +13,6 @@
     <div class="form-control">
         <label for="description">Descrição:</label>
         <textarea name="description" placeholder="Digite a Descrição" />{{ task.description }}</textarea>
-
     </div>
-
-    <div class="form-control form-checkbox">
-        {{#if task}}
-        {{#if task.done}}
-        <input type="checkbox" name="done" checked />
-        {{else }}
-        <input type="checkbox" name="done" />
-        {{/if}}
-        <label for="done">Status:</label>
-        {{/if}}
-    </div>
-
     <input type="submit" value="Salvar" />
 </form>
